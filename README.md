@@ -1,7 +1,5 @@
 # Ecommerce MERN Project
 
-## Enviroment setup
-
 ## Basic Plan
 
 1. Env Setup
