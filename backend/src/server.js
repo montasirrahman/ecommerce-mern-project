@@ -23,9 +23,31 @@ dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 
+// Middleware
+const isLoggedIn = (req, res, next) => {
+  const login = true;
+  if (login) {
+    next();
+  } else {
+    res.status(401).json({
+      message: "Please login first!",
+    });
+  }
+};
+
+/// API URL ///
+
+// TEST
 app.get("/test", (req, res) => {
   res.status(200).send({
-    message: "Welcome to the Backend Server!",
+    message: "api is working fine!",
+  });
+});
+
+// api user profile
+app.get("/api/user", isLoggedIn, (req, res) => {
+  res.status(200).send({
+    message: "user profile is working fine!",
   });
 });
 
