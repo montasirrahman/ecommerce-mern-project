@@ -35,7 +35,7 @@ const isLoggedIn = (req, res, next) => {
   }
 };
 
-/// API URL ///
+/// API URL //
 
 // TEST
 app.get("/test", (req, res) => {
